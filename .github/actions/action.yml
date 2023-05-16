@@ -1,0 +1,22 @@
+name: 'Custom Action'
+description: 'Example Custom Action'
+inputs:
+  url:
+    description: 'url'
+    required: true
+    default: 'url'
+  username:
+    description: 'username'
+    required: true
+    default: 'username'
+  password:
+    description: 'password'
+    required: true
+    default: 'password'        
+outputs:
+  message:
+    description: 'message'
+
+runs:
+  using: 'node16'
+  main: 'dist/index.js'

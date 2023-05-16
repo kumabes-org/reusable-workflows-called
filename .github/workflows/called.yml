@@ -18,9 +18,13 @@ jobs:
   reusable_workflows_called:
     runs-on: ubuntu-latest
     steps:
-    - name: "reusable_workflows_called"
-      run: |
-        echo ${{ inputs.url }}
-        echo ${{ secrets.username }}
-        echo ${{ secrets.password }}
-      shell: bash
+      - name: Custom Action
+        id: custom
+        uses: kumabes-org/reusable-workflows-called/.github/actions@main
+        with:
+          url: ${{ inputs.url }}
+          username: ${{ secrets.username }}
+          password: ${{ secrets.password }}
+
+      - name: Get the output message
+        run: echo "Message ${{ steps.custom.outputs.message }}"
