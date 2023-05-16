@@ -6,11 +6,6 @@ on:
       url:
         required: true
         type: string
-    secrets:
-      username:
-        required: false
-      password:
-        required: false
 
 jobs:
   reusable_workflows_called:
