@@ -1,5 +1,12 @@
 name: "reusable-workflows-called"
 
+permissions:
+  id-token: write
+  contents: write
+  checks: write
+  actions: write
+  packages: write
+  
 on:
   workflow_call:
     inputs:
