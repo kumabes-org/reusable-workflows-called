@@ -6,7 +6,7 @@ permissions:
   checks: write
   actions: write
   packages: write
-  
+
 on:
   workflow_call:
     inputs:
@@ -17,7 +17,6 @@ on:
 jobs:
   reusable_workflows_called:
     runs-on: ubuntu-latest
-    environment: production
     steps:
     - name: "reusable_workflows_called"
       run: |
