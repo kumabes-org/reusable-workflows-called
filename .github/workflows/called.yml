@@ -8,9 +8,9 @@ on:
         type: string
     secrets:
       username:
-        required: true
+        required: false
       password:
-        required: true
+        required: false
 
 jobs:
   reusable_workflows_called:
