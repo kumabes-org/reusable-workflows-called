@@ -1,0 +1,29 @@
+name: "reusable-workflows-called"
+
+on:
+  workflow_call:
+    inputs:
+      url:
+        required: true
+        type: string
+    secrets:
+      username:
+        required: true
+      password:
+        required: true
+
+jobs:
+  reusable_workflows_called:
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+    - name: "reusable_workflows_called"
+      run: |
+        echo "url: ${url}"
+        echo "username: ${username}"
+        echo "password: ${password}"
+      shell: bash
+      env:
+        url: ${{ inputs.url }}
+        username: ${{ secrets.username }}
+        password: ${{ secrets.password }}
