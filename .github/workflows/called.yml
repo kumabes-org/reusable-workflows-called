@@ -14,11 +14,7 @@ jobs:
     steps:
     - name: "reusable_workflows_called"
       run: |
-        echo "url: ${url}"
-        echo "username: ${username}"
-        echo "password: ${password}"
+        echo ${{ inputs.url }}
+        echo ${{ secrets.username }}
+        echo ${{ secrets.password }}
       shell: bash
-      env:
-        url: ${{ inputs.url }}
-        username: ${{ secrets.username }}
-        password: ${{ secrets.password }}
